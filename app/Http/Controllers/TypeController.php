@@ -25,4 +25,13 @@ class TypeController extends Controller
       // 取得した値をビュー「type/edit」に渡す
       return view('type/edit', compact('type'));
   }
+
+  public function update(Request $request, $id)
+  {
+      $type = Type::findOrFail($id);
+      $type->name = $request->name;
+      $type->save();
+
+      return redirect("/type");
+  }
 }
