@@ -14,7 +14,11 @@ class CreateTemplateTable extends Migration
     public function up()
     {
         Schema::create('template', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->integer('type_id');
+            $table->string('name', 120);
+            $table->mediumText('template');
+            $table->json('keywords')->nullable();
             $table->timestamps();
         });
     }

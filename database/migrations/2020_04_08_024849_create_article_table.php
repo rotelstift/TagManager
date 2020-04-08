@@ -14,7 +14,14 @@ class CreateArticleTable extends Migration
     public function up()
     {
         Schema::create('article', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->integer('template_id');
+            $table->string('name', 256);
+            $table->json('words');
+            // durationが空の場合、期限を設定しない
+            $table->time('duration_from')->nullable();
+            $table->time('duration_to')->nullable();
+            $table->json('eligibility');
             $table->timestamps();
         });
     }
