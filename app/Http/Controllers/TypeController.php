@@ -42,4 +42,20 @@ class TypeController extends Controller
 
     return redirect("/type");
   }
+
+  public function create()
+  {
+      // 空の$typeを渡す
+      $type = new Type();
+      return view('type/create', compact('type'));
+  }
+
+  public function store(Request $request)
+  {
+      $type = new Type();
+      $type->name = $request->name;
+      $type->save();
+
+      return redirect("/type");
+  }
 }
