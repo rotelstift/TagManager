@@ -34,4 +34,12 @@ class TypeController extends Controller
 
       return redirect("/type");
   }
+
+  public function destroy($id)
+  {
+    $type = Type::findOrFail($id);
+    $type->delete();
+
+    return redirect("/type");
+  }
 }
