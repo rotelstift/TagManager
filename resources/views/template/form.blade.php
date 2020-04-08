@@ -20,6 +20,8 @@
                     <input type="text" class="form-control" name="name" value="{{ $template->name }}">
                     <label for="type_id">タイプ選択</label>
                     {{ Form::select('type_id', $types, null, ['class' => 'form-control', 'name' => 'type_id']) }}
+                    <label for="template">テンプレート本文</label>
+                    <textarea name="template" rows="8" cols="80" class="form-control"></textarea>
                 </div>
                 <button type="submit" class="btn btn-default">登録</button>
                 <a href="/type">戻る</a>
