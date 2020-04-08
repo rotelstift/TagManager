@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\TypeRequest;
 use App\Type;
 
 class TypeController extends Controller
@@ -26,7 +27,7 @@ class TypeController extends Controller
       return view('type/edit', compact('type'));
   }
 
-  public function update(Request $request, $id)
+  public function update(TypeRequest $request, $id)
   {
       $type = Type::findOrFail($id);
       $type->name = $request->name;
@@ -50,7 +51,7 @@ class TypeController extends Controller
       return view('type/create', compact('type'));
   }
 
-  public function store(Request $request)
+  public function store(TypeRequest $request)
   {
       $type = new Type();
       $type->name = $request->name;
