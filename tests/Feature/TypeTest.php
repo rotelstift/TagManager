@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class TemplateTest extends TestCase
+class TypeTest extends TestCase
 {
     use RefreshDatabase;
     /**
@@ -16,7 +16,7 @@ class TemplateTest extends TestCase
      */
     public function testExample()
     {
-        $response = $this->get('/template');
+        $response = $this->get('/type');
 
         $response->assertStatus(200);
     }
