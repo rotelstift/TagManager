@@ -19,7 +19,7 @@ class TemplateController extends Controller
     public function edit($id)
     {
         $template = Template::findOrFail($id);
-        $types = Type::pluck('name', 'id');
+        $types = Type::all('name', 'id');
 
         return view('template/edit', compact('template', 'types'));
     }

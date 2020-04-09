@@ -19,7 +19,11 @@
                     <label for="name">テンプレート名</label>
                     <input type="text" class="form-control" name="name" value="{{ $template->name }}">
                     <label for="type_id">タイプ選択</label>
-                    {{ Form::select('type_id', $types, null, ['class' => 'form-control', 'name' => 'type_id']) }}
+                    <select name="type_id" class="form-control">
+                      @foreach($types as $type)
+                        <option value="{{$type->id}}" @if($type->id == $template->type_id) selected @endif>{{$type->name}}</option>
+                      @endforeach
+                    </select>
                     <label for="body">テンプレート本文</label>
                     <textarea name="body" rows="8" cols="80" class="form-control">{{ $template->body }}</textarea>
                 </div>
