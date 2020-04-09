@@ -36,6 +36,14 @@ class TemplateController extends Controller
         return redirect("/template");
     }
 
+    public function destroy($id)
+    {
+        $template = Template::findOrFail($id);
+        $template->delete();
+
+        return redirect("/template");
+    }
+
     public function create()
     {
         // 空の$typeを渡す
