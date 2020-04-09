@@ -24,7 +24,7 @@
                     <textarea name="body" rows="8" cols="80" class="form-control">{{ $template->body }}</textarea>
                 </div>
                 <button type="submit" class="btn btn-default">登録</button>
-                <a href="/type">戻る</a>
+                <a href="/template">戻る</a>
             </form>
         </div>
     </div>
