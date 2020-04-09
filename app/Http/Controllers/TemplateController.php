@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\TemplateRequest;
 use App\Template;
 use App\Type;
 
@@ -24,7 +25,7 @@ class TemplateController extends Controller
         return view('template/edit', compact('template', 'types'));
     }
 
-    public function update(Request $request, $id)
+    public function update(TemplateRequest $request, $id)
     {
         $template = Template::findOrFail($id);
         $template->name = $request->name;
@@ -53,7 +54,7 @@ class TemplateController extends Controller
         return view('template/create', compact('template', 'types'));
     }
 
-    public function store(Request $request)
+    public function store(TemplateRequest $request)
     {
         $template = new Template();
         $template->name = $request->name;
