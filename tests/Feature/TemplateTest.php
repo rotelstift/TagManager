@@ -8,6 +8,7 @@ use Tests\TestCase;
 
 class TemplateTest extends TestCase
 {
+    use RefreshDatabase;
     /**
      * A basic feature test example.
      *
@@ -15,7 +16,7 @@ class TemplateTest extends TestCase
      */
     public function testExample()
     {
-        $response = $this->get('/');
+        $response = $this->get('/template');
 
         $response->assertStatus(200);
     }
