@@ -49,7 +49,7 @@ class TemplateController extends Controller
     {
         // 空の$typeを渡す
         $template = new Template();
-        $types = Type::pluck('name', 'id');
+        $types = Type::all('name', 'id');
 
         return view('template/create', compact('template', 'types'));
     }
