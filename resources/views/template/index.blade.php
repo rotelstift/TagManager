@@ -11,6 +11,7 @@
     <table class="table text-center">
       <tr>
         <th class="text-center">ID</th>
+        <th class="text-center">タイプ</th>
         <th class="text-center">テンプレート名</th>
         <th class="text-center">削除</th>
       </tr>
@@ -19,6 +20,7 @@
         <td>
           <a href="/template/{{ $template->id }}/edit">{{ $template->id }}</a>
         </td>
+        <td>{{ $template->type->name }}</td>
         <td>{{ $template->name }}</td>
         <td>
           <form action="/template/{{ $template->id }}" method="post">
