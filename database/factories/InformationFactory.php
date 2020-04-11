@@ -8,7 +8,7 @@ use Faker\Generator as Faker;
 $factory->define(Information::class, function (Faker $faker) {
     return [
         //
-        "name" => $faker->sequence(10),
+        "name" => $faker->sentence(5),
         "template_id" => factory(App\Template::class),
     ];
 });
