@@ -10,6 +10,6 @@ $factory->define(Template::class, function (Faker $faker) {
         //
         "name" => $faker->sentence(5),
         "body" => $faker->paragraph,
-        "type_id" => factory(App\Type::class)
+        "type_id" => App\Type::all()->random()->id
     ];
 });
