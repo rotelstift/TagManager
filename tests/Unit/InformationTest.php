@@ -6,20 +6,20 @@ use App\Destination;
 use App\Information;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
-use PHPUnit\Framework\TestCase;
+use Illuminate\Database\Eloquent\Collection;
+use Tests\TestCase;
 
 class InformationTest extends TestCase
 {
-    use RefreshDatabase, WithFaker;
-
     /**
      * @test
      */
     public function a_information_belongs_to_many_destinations()
     {
-        $informantion = factory(Information::class)->create();
-        $destination = factory(Destination::class)->create();
+        $id = 1;
+        $informantion = Information::findOrNew($id);
 
-        $this->assertInstanceOf('Illuminate\Database\Eloquent\Colleciton', $informantion->destinations);
+        // echo $informantion->destinations;
+        $this->assertInstanceOf(Collection::class, $informantion->destinations);
     }
 }
