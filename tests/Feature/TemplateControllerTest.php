@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class TemplateTest extends TestCase
+class TemplateControllerTest extends TestCase
 {
     use RefreshDatabase;
     /**

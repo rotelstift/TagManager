@@ -2,14 +2,13 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Template;
+use App\Information;
 use Faker\Generator as Faker;
 
-$factory->define(Template::class, function (Faker $faker) {
+$factory->define(Information::class, function (Faker $faker) {
     return [
         //
         "name" => $faker->sentence(5),
-        "body" => $faker->paragraph,
-        "type_id" => factory(App\Type::class)
+        "template_id" => factory(App\Template::class),
     ];
 });
