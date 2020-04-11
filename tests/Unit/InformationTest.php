@@ -19,7 +19,6 @@ class InformationTest extends TestCase
         $id = 1;
         $informantion = Information::findOrNew($id);
 
-        // echo $informantion->destinations;
         $this->assertInstanceOf(Collection::class, $informantion->destinations);
     }
 }
