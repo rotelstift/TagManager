@@ -28,6 +28,6 @@ class CreateDestination extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('destination');
+        Schema::dropIfExists('destinations');
     }
 }
