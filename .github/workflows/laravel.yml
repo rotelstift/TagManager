@@ -27,7 +27,7 @@ jobs:
         DB_DATABASE: database/database.sqlite
     - name: Database Migration
       run: |
-        php artisan migrate
-        php artisan db:seed
+        php artisan migrate --env=testing
+        php artisan db:seed --env=testing
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       run: vendor/bin/phpunit
