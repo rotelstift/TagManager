@@ -18,3 +18,4 @@ Route::get('/',  function () {
 });
 Route::resource('type', 'TypeController');
 Route::resource('template', 'TemplateController');
+Route::resource('destination', 'DestinationController');
